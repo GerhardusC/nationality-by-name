@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+/* This is the styling for the little status block at the bottom when check name is clicked. It is positioned always at the bottom right of the screen */
+.status-fetching, .status-fetch-successful, .status-fetch-failed, .status-no-fetch {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    font-size: 40px;
+    width: 350px;
+    height: 100px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 8px -5px #000;
+    background-color: rgb(198, 198, 198);
+    color: #fff;
+    transition: background-color 0.2s, box-shadow 0.2s, color 0.2s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* When the fetching status is updated, so is the background color of each stage of the fetch. */
+.status-fetching {
+    background-color: rgb(119, 119, 119);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.status-fetch-successful {
+    background-color: rgb(64, 148, 64);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.status-no-fetch {
+    background-color: rgba(0,0,0,0);
+    color: #ffffff00;
+    box-shadow: none;
 }
 
-.App-link {
-  color: #61dafb;
+.status-fetch-failed {
+    background-color: rgb(160, 30, 30);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Making the form look slightly different from the default form. */
+
+.input-form {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    gap: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px gray;
 }
+
+.input-form label {
+    font-size: x-large;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.input-form button {
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 150px;
+}
+
+.input-form input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 30px;
+    width: 280px;
+    font-size: 25px;
+    text-align: center;
+    padding: 5px;
+    
+}
+/* Styling the prediction display block, including a small transition when it just fires up.*/
+.prediction-display {
+    background-color: #f8f8f8;
+    color: #000;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 360px;
+    padding: 20px 10px;
+    flex-direction: column;
+    box-shadow: 1px 1px 10px gray;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: box-shadow 0.2s, transform 0.2s, color 0.15s step-end;
+}
+
+.prediction-display img {
+    width: 80%;
+    box-shadow: 1px 1px 5px gray;
+}
+
+.prediction {
+    padding: 10px;
+}
+/* Making the prediction invisible with the scale and opacity so the transitions work nicely. */
+.no-prediction {
+    transform: scale(0);
+    box-shadow: none;
+    color: #00000000;
+}
+
+/* A button that changes some styling with transitions when you hover over it. */
+.custom-button {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #348c55;
+    color: #fff;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+/* When there is no input in the inputbox, the button style will warn the user. */
+.custom-button-no-input {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #9b403c;
+    color: #fff;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.custom-button:hover {
+    transform: scale(105%);
+    background-color: #42b66f;
+    cursor: pointer;
+}
+
+.custom-button-no-input:hover {
+    transform: scale(105%);
+    cursor: pointer;
+    background-color: #d85b55;
+} 
+
+
